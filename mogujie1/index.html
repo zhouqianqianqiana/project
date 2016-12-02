@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>蘑菇街-我的买手街</title>
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/same.css">
+		<link rel="Shortcut Icon" href="img/logo.ico" type="image/x-ico">
+		<script src="js/jquery-1.12.4.min.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/same.js"></script>
+		<script src="js/index.js"></script>	
+	<body>
+	
+		<div class="mgj_rightbar" style="right:0">
+			<!--空的右侧边栏-->
+			<div class="mgj_rightbar_960" id="mgj_rightbar_top_blank">
+				
+			</div>
+			<!--方便定margin的空的div-->
+			<div id="mgj_rightbar_blank_div"></div>
+			<!--用户头像-->
+			<div class="sidebar-item mgj-my-avatar" style="display: none;">
+				<a target="_blank" href="#">
+					<div class="img">
+						<img width="20" height="20" src="img/tx.jpg" />
+					</div>
+				</a>
+			</div>
+			<!--购物车-->
+			<div class="sidebar-item mgj-my-cart" style="left:0px;">
+				<a href="html/my_cart.html">
+					<i class="s-icon"></i>
+					<div class="s-txt">购物车</div>
+					<div class="num" style="display: none;"></div>
+				</a>
+			</div>
+			<!--优惠券-->
+			<div class="sidebar-item mgj-my-coupon">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">优惠券</div>
+					<div class="num" style="display: none;"></div>
+				</a>
+			</div>
+			<!--钱包-->
+			<div class="sidebar-item mgj-my-wallet">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">钱包</div>
+				</a>
+			</div>
+			<!--足迹-->
+			<div class="sidebar-item mgj-my-browserlog">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">足迹</div>
+					
+				</a>
+			</div>
+			<div class="sideBottom">
+				<!--回到顶部-->
+				<div class="sidebar-item mgj-back2top" style="left:0px;">
+					<a href="#">
+						<i class="s-icon"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--头部-->
+		
+		<!--header-->
+		<div id="header" class="J_sitenav header_2015">
+			<div class="">
+				<a href="#" class="home fl" style="display: none;">蘑菇街首页</a>
+				<ul class="header_top">
+					<!--未登录-->
+					<li class="s1 show-nologin"><a id="no-border" href="html/register.html">注册</a></li>
+					<li class="s1 show-nologin"><a id="no-border" href="html/login.html">登录</a></li>
+					<li class="s1 has_icon user_meta" style="display: none;">
+						<a href="#">周倩倩倩啊</a>
+						<a href="#"></a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode" id="menu_personal">
+							<li class="s2">
+								<a href="#">个人设置</a>
+							</li>
+							<li class="s2">
+								<a href="#">账号绑定</a>
+							</li>
+							<li class="s2">
+								<a href="#">退出</a>
+							</li>
+						</ol>
+					</li>
+					<li class="s1 has_line message_center" style="display: none;">
+						<a href="#" class="ext_module mogutalk_btn J_msg open_msg micon">
+							消息
+							<span class="num m_num" style="display: none;"></span>
+						</a>
+					</li>
+					<li class="s2 has_icon has_line user_fav" style="display: none;">
+						<a href="#">我的收藏</a>
+						<i class="icon_delta"></i>
+						<ul class="ext_mode">
+							<li class="s2">
+								<a href="#">收藏的商品</a>
+							</li>
+							<li class="s2">
+								<a href="#">收藏的小店</a>
+							</li>
+							<li class="s2">
+								<a href="#">浏览足迹</a>
+							</li>
+						</ul>
+					</li>
+					<li class="s1 myorder has_line">
+						<a href="#" class="text display_u">我的订单</a>
+					</li>
+					<li class="s1 has_line shopping_cart_v2">
+						<a href="html/my_cart.html" class="cart_info_wrap">
+							<span class="cart_info">购物车</span>
+						</a>
+						<i class="icon_delta"></i>
+						<span class="shop_cart_loading"></span>
+						<div class="empty_cart shop_cart_info" style="display:none"><p>您的购物车为空</p></div>
+						<div class="shop_cart_info" style="display: none;">
+							<ul class="mac_height_ie6" >
+								<li class="cart_li" style="display:none;">
+									<a href="#" class="imgbox">
+										<img src="" width="45"/>
+									</a>
+									<a href="#" class="title">title</a>
+									<span class="info">颜色：<span class="info_color">color</span> 尺码：<span class="info_size">sizeCurr</span></span><span class="price">priceNext</span><span class='del'>删除</span>
+								</li>
+							</ul>
+							<div class="subbox">
+								<div class="fr">
+									<a href="#" class="goel">查看购物车</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="s1 has_line has_icon custom_item">
+						<a href="#">客户服务</a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode">
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+						</ol>
+					</li>
+					<li class="s1 has_line has_icon myxiaodian">
+						<a href="#" class="text display_u">我的小店</a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode">
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+			
+		
+		
+		<!--header-mid-->
+		<div class="header-mid">
+			<div class="header-wrap">
+				<div class="logo">
+					<a href="javascript:;">
+						<img src="img/upload_ie4denjsgzrdqyleg4zdambqgiyde_207x51.png">
+					</a>
+				</div>
+				
+				<div class="form">
+					<div class="search-select">
+						<span class="selected">搜商品</span>
+						<ol>
+							<li class="current">
+								<a href="javascript:;">商品</a>
+							</li>
+							<li class="current">
+								<a href="javascript:;">店铺</a>
+							</li>
+						</ol>
+					</div>
+					<div class="form_search">
+						<input class="txt" id="search_txt" type="text" placeholder="初秋元气套装"/>
+						<input class="search" type="submit" value=" "/>
+						
+					</div>
+					<ul class="form_text" id="search_list">
+
+					</ul>
+					<div class="sear-show">
+						<a href="javascript">连衣裙</a>
+						<a href="javascript">韩版连衣裙</a>
+						<a href="javascript">连衣裙</a>
+						<a href="javascript">小白鞋</a>
+						<a href="javascript">连衣裙</a>
+						<a href="javascript">连衣裙</a>
+						<a href="javascript">连衣裙</a>
+					</div>
+				</div>
+				<div class="erweima">
+					<img src="img/upload_ifrdsnjugizgkn3ghezdambqmeyde_280x280.png" />
+				</div>
+			</div>
+			<div class="banner">
+				<a class="all-list" href="javascript:;">全部分类</a>
+				<a class="buy" href="html/goods_list.html" target="_blank">团购</a>
+				<a class="buy" href="javascript:;">快抢</a>
+			</div>
+		</div>
+		
+		
+		<!--middle-->
+		<div class="content">
+			<div class="container">
+				<div class="cont-left">
+					<ul class="nav-list">
+						<li class="primary_nav_li ">
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">上衣</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">秋上新</a><ins></ins>
+										<a href="javascript:;">衬衫</a><ins></ins>
+										<a href="javascript:;">针织衫</a>
+									</span>
+								</dd>
+							</dl>
+							<!--hide-->
+							<div class="nav-more">
+								<dl class="nav-more-wrap">
+									<dt><a href="javascript:;">初秋上新1</a></dt>
+									<dd>
+										<a href="javascript:;">时尚套装</a>
+										<a class="pink" href="javascript:;">牛仔外套</a>
+										<a href="javascript:;">棒球套装</a>
+										<a href="javascript:;">卫衣</a>
+										<a class="pink" href="javascript:;">风衣</a>
+										<a href="javascript:;">皮衣</a>
+										<a href="javascript:;">薄外套</a>
+									</dd>
+								</dl>
+								<dl class="nav-more-wrap">
+									<dt><a href="javascript:;">初秋上新</a></dt>
+									<dd>
+										<a href="javascript:;">时尚套装</a>
+										<a href="javascript:;">牛仔外套</a>
+										<a class="pink" href="javascript:;">棒球套装</a>
+										<a href="javascript:;">卫衣</a>
+										<a href="javascript:;">风衣</a>
+										<a class="pink" href="javascript:;">皮衣</a>
+										<a href="javascript:;">薄外套</a>
+									</dd>
+								</dl>
+								<dl class="nav-more-wrap">
+									<dt><a href="javascript:;">初秋上新</a></dt>
+									<dd>
+										<a class="pink" href="javascript:;">时尚套装</a>
+										<a class="pink" href="javascript:;">牛仔外套</a>
+										<a href="javascript:;">棒球套装</a>
+										<a href="javascript:;">卫衣</a>
+										<a href="javascript:;">风衣</a>
+										<a href="javascript:;">皮衣</a>
+										<a href="javascript:;">薄外套</a>
+									</dd>
+								</dl>
+								<div class="nav-pic">
+									<a href="javascript:;">
+										<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+									</a>
+								</div>
+						</div>
+						</li>
+						
+						<li >
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">裙子</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">连衣裙</a><ins></ins>
+										<a href="javascript:;">半身裙</a><ins></ins>
+										<a href="javascript:;">针织裙</a>
+									</span>
+								</dd>
+							</dl>
+						
+						
+						<!--hide-->
+						<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新2</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">裤子</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">牛仔裤</a><ins></ins>
+										<a href="javascript:;">打底裤</a><ins></ins>
+										<a href="javascript:;">阔腿裤</a>
+									</span>
+								</dd>
+							</dl>
+							<!--hide-->
+						<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">当季热销3</a></dt>
+								<dd>
+									<a href="javascript:;">韩范美裙</a>
+									<a class="pink" href="javascript:;">裙子套装</a>
+									<a href="javascript:;">T徐群</a>
+									<a href="javascript:;">白昼群</a>
+									<a class="pink" href="javascript:;">衬衫裙</a>
+									<a href="javascript:;">包臀裙</a>
+									<a href="javascript:;">背带裙</a>
+									<a href="javascript:;">长裙</a>
+									<a class="pink" href="javascript:;">牛仔裙</a>
+									<a href="javascript:;">背心裙</a>
+									<a href="javascript:;">牛仔裙</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ie4deyrvguytkytchezdambqgiyde_250x130.jpg"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">内衣</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">热销榜</a><ins></ins>
+										<a href="javascript:;">睡衣套装</a><ins></ins>
+										<a href="javascript:;">内裤</a>
+									</span>
+								</dd>
+							</dl>
+							<!--hide-->
+						<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新4</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+
+						</li>
+						
+						
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">鞋子</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">运动鞋</a><ins></ins>
+										<a href="javascript:;">单鞋</a><ins></ins>
+										<a href="javascript:;">秋上新</a>
+									</span>
+								</dd>
+							</dl>
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新5</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">男友</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">一元抢</a><ins></ins>
+										<a href="javascript:;">九分裤</a><ins></ins>
+										<a href="javascript:;">卫衣</a>
+									</span>
+								</dd>
+							</dl>
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新6</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">包包</a>
+								</dt>
+								<dd>
+									<span>
+										<a href="javascript:;">秋上新</a><ins></ins>
+										<a class="pink" href="javascript:;">女包</a><ins></ins>
+										<a href="javascript:;">男包</a>
+									</span>
+								</dd>
+							</dl>
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新7</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">运动</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">运动套装</a><ins></ins>
+										<a href="javascript:;">运动鞋</a><ins></ins>
+										<a class="pink" href="javascript:;">卫衣</a>
+									</span>
+								</dd>
+							</dl>
+							
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新7</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">美妆</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">补水保湿</a><ins></ins>
+										<a href="javascript:;">面膜</a><ins></ins>
+										<a href="javascript:;">BB霜</a>
+									</span>
+								</dd>
+							</dl>
+							
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新7</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">配饰</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">早秋围巾</a><ins></ins>
+										<a href="javascript:;">衬衫</a><ins></ins>
+										<a href="javascript:;">针织衫</a>
+									</span>
+								</dd>
+							</dl>
+							
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新7</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+							
+						</li>
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">上衣</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">秋上新</a><ins></ins>
+										<a href="javascript:;">衬衫</a><ins></ins>
+										<a href="javascript:;">针织衫</a>
+									</span>
+								</dd>
+							</dl>
+							
+							
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新7</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						
+						
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">上衣</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">秋上新</a><ins></ins>
+										<a href="javascript:;">衬衫</a><ins></ins>
+										<a href="javascript:;">针织衫</a>
+									</span>
+								</dd>
+							</dl>
+							
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新7</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						<li>
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">上衣</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">秋上新</a><ins></ins>
+										<a href="javascript:;">衬衫</a><ins></ins>
+										<a href="javascript:;">针织衫</a>
+									</span>
+								</dd>
+							</dl>
+							
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新7</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+						<li id="no-border">
+							<dl class="nav-wrap">
+								<dt class>
+									<a href="javascript:;">上衣</a>
+								</dt>
+								<dd>
+									<span>
+										<a class="pink" href="javascript:;">秋上新</a><ins></ins>
+										<a href="javascript:;">衬衫</a><ins></ins>
+										<a href="javascript:;">针织衫</a>
+									</span>
+								</dd>
+							</dl>
+							
+							<!--hide-->
+							<div class="nav-more">
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新7</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a class="pink" href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a href="javascript:;">时尚套装</a>
+									<a href="javascript:;">牛仔外套</a>
+									<a class="pink" href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a class="pink" href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<dl class="nav-more-wrap">
+								<dt><a href="javascript:;">初秋上新</a></dt>
+								<dd>
+									<a class="pink" href="javascript:;">时尚套装</a>
+									<a class="pink" href="javascript:;">牛仔外套</a>
+									<a href="javascript:;">棒球套装</a>
+									<a href="javascript:;">卫衣</a>
+									<a href="javascript:;">风衣</a>
+									<a href="javascript:;">皮衣</a>
+									<a href="javascript:;">薄外套</a>
+								</dd>
+							</dl>
+							<div class="nav-pic">
+								<a href="javascript:;">
+									<img src="img/upload_ieztkobzmrswinlcgmzdambqgyyde_250x130.png"/>
+								</a>
+							</div>
+						</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="primary-main">
+					<!--首屏广告-->
+					<div class="primary-main-banner">
+						<ul id="box">
+						</ul>
+							
+				
+						<div class="pages">
+						</div>
+						<div class="prev"></div>
+						<div class="next"></div>
+					</div>
+					
+					<!--right-->
+					<div class="primary-main-sales">
+						<ul class="sale-list">
+							<li class="sale-li">
+								<a href="html/goods_detail.html" target="_blank">
+									<span>
+										<img />
+									</span>
+								</a>
+								
+							</li>
+							<li class="sale-li sale-li-padding" >
+								<a href="html/goods_details.html" target="_blank">
+									<span>
+										<img/>
+									</span>
+								</a>
+								
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--首屏-->
+			
+		
+		<div class="wrap_spacial_con">
+			<div class="sp_col1">
+				<a href="javascript:;">
+					<img/>
+					<span class="timer-title"></span>
+					<span class="timer-con">
+						<span class="timer-hh"></span>
+						<span>:</span>
+						<span class="timer-mm"></span>
+						<span>:</span>
+						<span class="timer-ss"></span>
+					</span>
+					<span class="price-con">
+						<span class="price-val">19元</span>
+						<span class="price-name">快抢价</span>
+					</span>
+				</a>
+			</div>
+			<div class="sp_col23_con">
+				<div class="sp_col2">
+					<a href="html/goods_list.html" target="_blank">
+						<img/>
+					</a>
+				</div>
+				<div class="sp_col3">
+					<a href="handu.html" target="_blank">
+						<img/>
+					</a>
+				</div>
+			</div>
+			<div class="sp_col45_con">
+				<div class="sp_col4">
+					<a href="javascrip:;">
+						<img/>
+					</a>
+				</div>
+				<div class="sp_col5">
+					<a href="javascript:;">
+						<img/>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<!--专题-->
+		<div class="">
+		<ul class="" id="floor_list">
+		<li class="wrap npt1_1">
+			<ul class="clearfix">
+				<li>
+					<div class="h-title">
+						<div class="h-left"></div>
+						<div class="h-txt"><h3></h3></div>
+						<div class="h-right"></div>
+					</div>
+				</li>
+				<li>
+					<div class="npt1_con">
+						<div class="npt1-con1">
+							<div class="coverd_con">
+								<a href="javascript:;">
+									<img/>
+								</a>
+								<a href="javascript:;">
+									<img/>
+								</a>
+							</div>
+							<!--顶部图片广告位-->
+							<ul class="btm_txt_con clearfix">
+							
+							</ul>
+						</div>
+						
+						<!--第一列-->
+						
+						<div class="npt1_col2">
+							<div class="npt1_c2_row1">
+								<div class="col1-row1">
+									<a href="javascript:;">
+										<img />
+									</a>
+								</div>
+								<div class="col1-row1 col1-margin">
+									<a href="javascript:;">
+										<img/>
+									</a>
+								</div>
+								<div class="col1-row1">
+									<a href="javascript:;">
+										<img/>
+									</a>
+								</div>
+							</div>
+							<div class="npt1_c2_row2">
+								<div class="npt1_pic1">
+									<a href="javascript:;">
+										<img/>
+										<span class="r_desc">
+											<span>低价连衣裙</span>
+											<span class="t_btm">约会必备甜蜜单品</span>
+										</span>
+									</a>
+								</div>
+								<div class="npt1_pic1">
+									<a href="javascript:;">
+										<img/>
+										<span class="r_desc">
+											<span>低价连衣裙</span>
+											<span class="t_btm">约会必备甜蜜单品</span>
+										</span>
+									</a>
+								</div>
+								<div class="npt1_pic1">
+									<a href="javascript:;">
+										<img/>
+										<span class="r_desc">
+											<span>低价连衣裙</span>
+											<span class="t_btm">约会必备甜蜜单品</span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<!--品牌站-->
+		<li class="wrap npt1_2">
+			<!-- ul -->
+			<div class="clearfix">
+				<!-- li -->
+				<div>
+					<div class="h-title">
+						<div class="h-title">
+							<div class="h-left"></div>
+							<div class="h-txt"><h3></h3></div>
+							<div class="h-right"></div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="npt1_con">
+						<div class="npt1-con1 ">
+							
+								<a class="ad_up" href="javascript:;">
+									<img src=""  />
+								</a>
+						</div>
+						<div class="npt1_col2">
+							<div class="col_long_pic">
+								<a href="javascript:;">
+									<img src="" />
+									
+								</a>
+							</div>
+							<div class="col_goods">
+								<div class="goods_list">
+									<a class="a1" href="javascript:;" style="display:none;">
+										<img src="" />
+										<span class="goods_name">
+											<span class="goods_name_sc">
+											</span>
+										</span>
+									</a>
+								</div>
+									
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</li>
+		</ul>
+		</div>
+		
+		
+	
+		
+		<!--footer-->
+		<div class="footer">
+			<div class="foot">
+				
+				<div class="foot-logo">
+					
+					<div class="foot-intro">
+						<p>营业执照注册号：1234567894565</p>
+						<p>增值电信业务经营许可证：浙123456789</p>
+						<p class="police">浙公网安备 3301062020012号</p>
+						<p>@2010 Mogujie.com 杭州卷瓜网络有限公司</p>
+					</div>
+					<div class="company">
+						<ul>
+							<li class="href-header">公司</li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="company">
+						<ul>
+							<li class="href-header">公司</li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="company">
+						<ul>
+							<li class="href-header">公司</li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="company company1">
+						<ul>
+							<li class="href-header">权威认证</li>
+							<li>
+								<a class="link-a1" href="javascript:;"></a>
+								<a class="link-a2" href="javascript:;"></a>
+							</li>
+						</ul>
+						
+					</div>
+					
+				</div>
+				<div class="bottom">
+					<span>友情链接：</span>
+					<a href="javascript:;">蘑菇街游戏</a>
+					<a href="javascript:;">分逃吧</a>
+					<a href="javascript:;">穿衣搭配</a>
+					<a href="javascript:;">蘑菇街男装</a>
+					<a href="javascript:;">蘑菇街鞋子</a>
+					<a href="javascript:;">蘑菇街包包</a>
+					<a href="javascript:;">QQ钱包</a>
+					<a href="javascript:;">家居网</a>
+					<a href="javascript:;">史上品牌网</a>
+					<a href="javascript:;">装修网</a>
+					<a href="javascript:;">蘑菇街母婴</a>
+					<a href="javascript:;">博士网视频</a>
+					<a href="javascript:;">重回网 </a>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="search_container">
+			<div class="container_wrap">
+				<a class="search_logo" href="javascript:;">
+					蘑菇街我的买手街
+				</a>
+				<div class="search_content">
+					<div class="selectbox">
+						<span class="selected">搜商品</span>
+						<ol>
+							<li class="current">
+								<a href="javascript:;">商品</a>
+							</li>
+							<li class="current">
+								<a href="javascript:;">店铺</a>
+							</li>
+						</ol>
+					</div>
+					<form>
+						<input class="st_txt" id="search_txt" type="text" placeholder="小清新套装"/>
+						<input class="st_btn" type="submit" value=""/>
+					</form>
+					<ul class="form_text" id="search_list" style="display:none;"></ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

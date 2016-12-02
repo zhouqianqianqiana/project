@@ -1,0 +1,8 @@
+{
+	"womenCloth":
+	[{"imgUrl":"img/1472246502403243088.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/1472727837519596854.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/1473414662350029369.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/1473782551663584090.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/1473782622409721283.jpg","price":136.00,"prevPrice":230.00}],
+	"manCloth":[{"imgUrl":"img/w1.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/w2.jpg","price":89.00,"prevPrice":230.00},{"imgUrl":"img/w3.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/w4.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/w5.jpg","price":136.00,"prevPrice":230.00}],
+	"oldWoman":[{"imgUrl":"img/d1.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/d2.jpg","price":89.00,"prevPrice":230.00},{"imgUrl":"img/d3.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/d4.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/d5.jpg","price":136.00,"prevPrice":230.00}],
+	"easyWoman":[{"imgUrl":"img/j1.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/j2.jpg","price":89.00,"prevPrice":230.00},{"imgUrl":"img/j3.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/j4.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/j5.jpg","price":136.00,"prevPrice":230.00}],
+	"children":[{"imgUrl":"img/c1.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/c2.jpg","price":89.00,"prevPrice":230.00},{"imgUrl":"img/c3.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/c4.jpg","price":136.00,"prevPrice":230.00},{"imgUrl":"img/c5.jpg","price":136.00,"prevPrice":230.00}]
+}

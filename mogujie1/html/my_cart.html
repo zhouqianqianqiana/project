@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的购物车</title>
+		<link rel="stylesheet" href="../css/my_cart.css" />
+		<link rel="stylesheet" href="../css/same.css" />
+		<link rel="Shortcut Icon" href="../img/logo.ico" type="image/x-ico">
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js" ></script>
+		<script src="../js/same.js"></script>
+		<script src="../js/cartInfo.js"></script>
+		<script src="../js/my_cart.js"></script>
+	</head>
+	<body>
+		<div class="mgj_rightbar" style="right:0">
+			<!--空的右侧边栏-->
+			<div class="mgj_rightbar_960" id="mgj_rightbar_top_blank">
+				
+			</div>
+			<!--方便定margin的空的div-->
+			<div id="mgj_rightbar_blank_div"></div>
+			<!--用户头像-->
+			<div class="sidebar-item mgj-my-avatar">
+				<a target="_blank" href="#">
+					<div class="img">
+						<img width="20" height="20" src="../img/tx.jpg" />
+					</div>
+				</a>
+			</div>
+			<!--购物车-->
+			<div class="sidebar-item mgj-my-cart" style="left:0px;">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">购物车</div>
+					<div class="num" style="display: none;"></div>
+				</a>
+			</div>
+			<!--优惠券-->
+			<div class="sidebar-item mgj-my-coupon">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">优惠券</div>
+					<div class="num" style="display: none;"></div>
+				</a>
+			</div>
+			<!--钱包-->
+			<div class="sidebar-item mgj-my-wallet">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">钱包</div>
+				</a>
+			</div>
+			<!--足迹-->
+			<div class="sidebar-item mgj-my-browserlog">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">足迹</div>
+					
+				</a>
+			</div>
+			<div class="sideBottom">
+				<!--回到顶部-->
+				<div class="sidebar-item mgj-back2top" style="left:0px;">
+					<a href="#">
+						<i class="s-icon"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<!--header-->
+		<div id="header" class="J_sitenav header_2015">
+			<div class="wrap clearfix">
+				<a href="#" class="home fl">蘑菇街首页</a>
+				<ul class="header_top">
+					<!--未登录-->
+					<li class="s1 show-nologin"><a id="no-border" href="register.html" target="_blank">注册</a></li>
+					<li class="s1 show-nologin"><a id="no-border" href="login.html">登录</a></li>
+					<li class="s1 has_icon user_meta" style="display: none;">
+						<a href="#">周倩倩倩啊</a>
+						<a href="#"></a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode" id="menu_personal">
+							<li class="s2">
+								<a href="#">个人设置</a>
+							</li>
+							<li class="s2">
+								<a href="#">账号绑定</a>
+							</li>
+							<li class="s2">
+								<a href="#">退出</a>
+							</li>
+						</ol>
+					</li>
+					<li class="s1 has_line message_center">
+						<a href="#" class="ext_module mogutalk_btn J_msg open_msg micon">
+							消息
+							<span class="num m_num" style="display: none;"></span>
+						</a>
+					</li>
+					<li class="s2 has_icon has_line user_fav">
+						<a href="#">我的收藏</a>
+						<i class="icon_delta"></i>
+						<ul class="ext_mode">
+							<li class="s2">
+								<a href="#">收藏的商品</a>
+							</li>
+							<li class="s2">
+								<a href="#">收藏的小店</a>
+							</li>
+							<li class="s2">
+								<a href="#">浏览足迹</a>
+							</li>
+						</ul>
+					</li>
+					<li class="s1 myorder has_line">
+						<a href="#" class="text display_u">我的订单</a>
+					</li>
+					<li class="s1 has_line shopping_cart_v2">
+						<a href="#" class="cart_info_wrap">
+							<span class="cart_info">购物车</span>
+						</a>
+						<i class="icon_delta"></i>
+						<span class="shop_cart_loading"></span>
+						<div class="shop_cart_info empty_cart" style="display:none;">购物车没有商品！</div>
+						<div class="shop_cart_info" style="display: none;">
+							<ul class="mac_height_ie6">
+								<li class="cart_li" style="display:none;">
+									<a href="#" class="imgbox">
+										<img src="" width="45"/>
+									</a>
+									<a href="#" class="title">title</a>
+									<span class="info">颜色：<span class="info_color">color</span> 尺码：<span class="info_size">sizeCurr</span></span><span class="price">priceNext</span><span class='del'>删除</span>
+								</li>
+							</ul>
+							<div class="subbox">
+								<div class="fr">
+									<a href="#" class="goel">查看购物车</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="s1 has_line has_icon custom_item">
+						<a href="#">客户服务</a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode">
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+						</ol>
+					</li>
+					<li class="s1 has_line has_icon myxiaodian">
+						<a href="#" class="text display_u">我的小店</a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode">
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="body_wrap">
+			<div class="g-header clearfix">
+				<div class="g-header-in wrap clearfix">
+					<div class="process-bar">
+						<div class="md_process md_process_len4">
+							<div class="md_process_wrap md_process_step1_5">
+								<div class="md_process_sd">
+									
+								</div>
+								<i class="md_process_i md_process_i1">
+									1<span class="md_process_tip">购物车</span>
+								</i>
+								<i class="md_process_i md_process_i2">
+									2<span class="md_process_tip">确认订单</span>
+								</i>
+								<i class="md_process_i md_process_i3">
+									3<span class="md_process_tip">支付</span>
+								</i>
+								<i class="md_process_i md_process_i4">
+									<img src="../img/finish.png" width="23" height="23" />
+									<span class="md_process_tip">完成</span>
+								</i>
+							</div>
+						</div>
+					</div>
+					
+					<!--logo-->
+					<div class="logo logo-cart"></div>
+				</div>
+			</div>
+			<div class="g-wrap wrap">
+				<ul class="clearfix cart_slide pb20" id="cartSlide" style="height:30px;">
+					<li>
+						<a href="#" class="mr10 cart_slide_item cartSlideItemAll cart_slide_item_curr">
+							全部商品
+							<span class="num">2</span>
+						</a>
+					</li>
+					<li class="cartslide-line">|</li>
+					<li>
+						<a href="#" class="mr10 cart_slide_item cartSlideItemAll ">
+							优惠
+							<span class="num">2</span>
+						</a>
+					</li>
+					<li class="cartslide-line">|</li>
+					<li>
+						<a href="#" class="mr10 cart_slide_item cartSlideItemAll ">
+							库存紧张
+							<span class="num">0</span>
+						</a>
+					</li>
+				</ul>
+					<!--不为空的情况-->
+					<div class="cart_wrap cart_nobdbtm">
+						<div class="cart_page_wrap" id="cartPage" >
+							<input type="hidden" name="shop_domain" id="shop_domain" value>
+							<input type="hidden" name="data_props" id="data_props" value>
+							<input type="hidden" disabled="coudan_type" value="0">
+							<!--biaoge-->
+							<table class="cart_table" id="cartOrderTable">
+								<thead>
+									<tr>
+										<th class="cart_table_check_wrap cart_alleft pl10">
+											<input type="checkbox" name="s_all" class="s_all tr_checkmr" id="s_all_h">
+											<label for="s_all_h">全选</label>
+										</th>
+										<th class="cart_table_goods_wrap">商品</th>
+										<th class="cart_table_goodsinfo_wrap">商品信息</th>
+										<th>单价（元）</th>
+										<th class="cart_table_goodsnum_wrap">数量</th>
+										<th class="cart_table_goodssum_wrap">小计（元）</th>
+										<th class="cart_table_goodsctrl_wrap">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="" style="display:none;">
+										<!--id是店铺-->
+										<td colspan="7" class="cart_group_head">
+											<!---->
+											<input type="checkbox" class="s_shopall tr_checkmr" name="s_shopall">
+											<label for class="cart_lightgray">店铺：</label>
+											<a href="#" class="cart_hoverline">前小魔</a>
+											<a href="#" class="cart_im_btn mr5 "></a>
+											<!--更多满减信息-->
+											<div class="cart_tip_red cart_hidetip">
+												<div class="cart_tip_hd">
+													<span>领取</span>
+													
+													<i class="cart_icon_redarrow">√</i>
+												</div>
+												<div class="cart_hidden" style="display: none">
+													<p class="got_cp"><a href="#" class="close"></a></p>
+													<div class="coupons">
+														<ul>
+															<li class="clearfix">
+																<span class="value fl">￥2.00</span>
+																<p class="cp_title fl">购满2元立减</p>
+																<p class="cp_desc fl">16.08.25-16.10.31</p>
+																<span class="draw fr yes">领取</span>
+															</li>
+															<li class="clearfix">
+																<span class="value fl">￥2.00</span>
+																<p class="cp_title fl">购满2元立减</p>
+																<span class="draw fr yes">领取</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<span class="cart_tip_red red">优惠券：</span>
+											<ul class="discount cart_tip_red">
+												<li>
+													<i></i>
+													满2元减2元
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr class="" style="display:none ">
+										<td class="vm">
+											<input type="checkbox" class="cart_thcheck tr_checkmr">
+										</td>
+										<td class="cart_table_goods_wrap">
+											<a href="#" class="cart_goods_img">
+												<img src="../img/cart_pic.jpg" class="cartImgTip" width="78" height="78"/>
+												<a href="#" class="cart_goods_t cart_hoverline">秋季新平连帽村色卫衣—+打的哭套装</a>
+											</a>
+											<p class="remind_btm"></p>
+										</td>
+										<td>
+											<p class="cart_lh20">颜色：<span class="cart_color"></span></p>
+											<p class="cart_lh20">尺码：<span class="cart_size"></span></p>
+										</td>
+										<td class="cart_alcenter">
+											<!--单价-->
+											<p class="cart_lh20 cart_throughline cart_lightgray">490.99</p>
+											<p class="cart_lh20 cart_bold cart_data_sprice">399.00</p>
+											<p>
+												<span class="cart_tip_yellow cart_tip_focuswidth">促销<span class="cart_tip_focuse"></span>折</span>
+											</p>
+										</td>
+										<td class="cart_alcenter">
+											<!--shuliang-->
+											<div>
+												<div class="cart_num cart_counter">
+													<input type="text" class="cart_num_input cart_bold" maxlength="3" value="1">
+													<span class="cart_num_add"></span>
+													<span class="cart_num_reduce disable"></span>
+												</div>
+											</div>
+										</td>
+										<td class="cart_alcenter">
+											<!--小计-->
+											<p class="cart_deep_red cart_font16 item_sum">399.00</p>
+										</td>
+										<td class="cart_alcenter">
+											<a href="#" class="cart_hoverline delete">删除</a>
+										</td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+						<div class="cart_page_wrap" id="cartEmptyPage" style="display: block;">
+							<!--kong-->
+						</div>
+					</div>
+					
+					<div class="cart_paybar wrap" id="cartPaybar">
+						<a href="javascript:;" class="cart_paybtn fr cart_paybtn_disable" id="payBtn">去付款</a>
+						<div class="cart_paybar_info_cost cart_deep_red cart_bold cart_font26 cart_money fr goodsSum">￥0.00</div>
+						<div class="cart_paybar_info cart_pregray fr">共有
+						<span class="cart_deep_red goodsNum">0</span>
+						件商品，总计：</div>
+						<div class="cart_paybar_vmbox"> 
+							<input type="checkbox" name="s_all" class="s_all_slave cart_vm" id="s_all_f"> 
+								<label for="s_all_f" class="mr10">全选</label> 
+								<a href="javascript:;" class="mr10 cart_uline cart_pregray" id="cartRemoveChecked">删除</a> 
+								<a href="javascript:;" class="mr10 cart_uline cart_pregray" id="cartRemoveUnuse">清空失效商品</a> 
+								<a href="javascript:;" class="mr10 cart_uline cart_pregray" id="cartRemoveToCollect">移入收藏夹</a>  
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="g-footer">
+			<p title="mofa015027">
+				<a href="#">蘑菇街</a>|
+				<a href="#">加入开放平台</a>|
+				&copy; 2016 Mogujie.com,All Rights Reserved.
+			</p>
+			<div class="icons">
+				<a class="vs" href="#"></a>
+				<a class="mc" href="#"></a>
+				<a class="up" href="#"></a>
+				<a class="pa" href="#"></a>
+				<a class="kx" href="#"></a>
+				<a class="pc" href="#"></a>
+			</div>
+		</div>
+	</body>
+</html>

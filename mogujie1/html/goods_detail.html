@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<link rel="stylesheet" href="../css/my_cart.css"/>
+		<link rel="stylesheet" href="../css/same.css" />
+		<link rel="stylesheet" href="../css/goods_detail.css" />
+		<link rel="Shortcut Icon" href="../img/logo.ico" type="image/x-ico">
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery.fly.min.js"></script>
+		<script src="../js/goods_detail.js"></script>
+		<script src="../js/jquery.cookie.js"></script>
+		<script src="../js/cartInfo.js"></script>
+		<script type="text/javascript" src="../js/same.js" ></script>
+	</head>
+	<body>
+		<div class="mgj_rightbar" style="right:0">
+			<!--空的右侧边栏-->
+			<div class="mgj_rightbar_960" id="mgj_rightbar_top_blank">
+				
+			</div>
+			<!--方便定margin的空的div-->
+			<div id="mgj_rightbar_blank_div"></div>
+			<!--用户头像-->
+			<div class="sidebar-item mgj-my-avatar">
+				<a target="_blank" href="#">
+					<div class="img">
+						<img width="20" height="20" src="../img/tx.jpg" />
+					</div>
+				</a>
+			</div>
+			<!--购物车-->
+			<div class="sidebar-item mgj-my-cart" style="left:0px;">
+				<a href="../html/my_cart.html">
+					<i class="s-icon"></i>
+					<div class="s-txt" id="my_cart">购物车</div>
+					<div class="num" style="display: none;"></div>
+				</a>
+			</div>
+			<!--优惠券-->
+			<div class="sidebar-item mgj-my-coupon">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">优惠券</div>
+					<div class="num" style="display: none;"></div>
+				</a>
+			</div>
+			<!--钱包-->
+			<div class="sidebar-item mgj-my-wallet">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">钱包</div>
+				</a>
+			</div>
+			<!--足迹-->
+			<div class="sidebar-item mgj-my-browserlog">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">足迹</div>
+					
+				</a>
+			</div>
+			<div class="sideBottom">
+				<!--回到顶部-->
+				<div class="sidebar-item mgj-back2top" style="left:0px;">
+					<a href="#">
+						<i class="s-icon"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--header-->
+		
+		<!--header-->
+		<div id="header" class="J_sitenav header_2015">
+			<div class="wrap clearfix">
+				<a href="../index.html" class="home fl">蘑菇街首页</a>
+				<ul class="header_top">
+					<!--未登录-->
+					<li class="s1 show-nologin"><a id="no-border" href="html/register.html">注册</a></li>
+					<li class="s1 show-nologin"><a id="no-border" href="html/login.html">登录</a></li>
+					<li class="s1 has_icon user_meta" style="display: none;">
+						<a href="#">周倩倩倩啊</a>
+						<a href="#"></a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode" id="menu_personal">
+							<li class="s2">
+								<a href="#">个人设置</a>
+							</li>
+							<li class="s2">
+								<a href="#">账号绑定</a>
+							</li>
+							<li class="s2">
+								<a href="#">退出</a>
+							</li>
+						</ol>
+					</li>
+					<li class="s1 has_line message_center">
+						<a href="#" class="ext_module mogutalk_btn J_msg open_msg micon">
+							消息
+							<span class="num m_num" style="display: none;"></span>
+						</a>
+					</li>
+					<li class="s2 has_icon has_line user_fav">
+						<a href="#">我的收藏</a>
+						<i class="icon_delta"></i>
+						<ul class="ext_mode">
+							<li class="s2">
+								<a href="#">收藏的商品</a>
+							</li>
+							<li class="s2">
+								<a href="#">收藏的小店</a>
+							</li>
+							<li class="s2">
+								<a href="#">浏览足迹</a>
+							</li>
+						</ul>
+					</li>
+					<li class="s1 myorder has_line">
+						<a href="#" class="text display_u">我的订单</a>
+					</li>
+					<li class="s1 has_line shopping_cart_v2">
+						<a href="../html/my_cart.html" class="cart_info_wrap">
+							<span class="cart_info">购物车</span>
+						</a>
+						<i class="icon_delta"></i>
+						<span class="shop_cart_loading"></span>
+						<div class="shop_cart_info empty_cart" style="display:none;">购物车没有商品！</div>
+						<div class="shop_cart_info" style="display: none;">
+							<ul class="mac_height_ie6">
+								<li class="cart_li" style="display:none;">
+									<a href="#" class="imgbox">
+										<img src="" width="45"/>
+									</a>
+									<a href="#" class="title">title</a>
+									<span class="info">颜色：<span class="info_color">color</span> 尺码：<span class="info_size">sizeCurr</span></span><span class="price">priceNext</span><span class='del'>删除</span>
+								</li>
+							</ul>
+							<div class="subbox">
+								<div class="fr">
+									<a href="my_cart.html" class="goel">查看购物车</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="s1 has_line has_icon custom_item">
+						<a href="#">客户服务</a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode">
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+						</ol>
+					</li>
+					<li class="s1 has_line has_icon myxiaodian">
+						<a href="#" class="text display_u">我的小店</a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode">
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<!--店铺公共信息 头部-->
+		<div class="shop-header">
+			<div class="header clearfix">
+				<div class="user-info f1">
+					<a class="avatar" href="javascript:;" title="歌奈尔国际女装">
+						<img class="f1 face" src="../img/18eyw5_ieztcyrqguytenjwgazdambqgyyde_200x200.jpg_100x100.jpg" />
+					</a>
+					<div class="shop-name f1">
+					<div class="name-wrap clearfix">
+						<a href="javascript:;" class="name f1">歌奈尔国际女装</a>
+					</div>
+					<div  class="shop-score icon_show">
+						<p>
+							<span>
+								描述
+								<b>4.66</b>
+							</span>
+							<span>
+								价格
+								<b>4.66</b>
+							</span>
+							<span>
+								质量
+								<b>4.66</b>
+							</span>
+							<span>
+								服务
+								<b>4.66</b>
+							</span>
+						</p>
+						<span class="shop-star"></span>
+						
+						
+						<!--下拉列表-->
+						<div  class="shop-info clearfix">
+							<div class="shop-info-content">
+								<div class="info-box f1">
+									<ol class="li li3">
+										<li>
+											<span class="tag">所在地区：</span>
+											广东省
+										</li>
+										<li>
+											<span class="tag">所在地区：</span>
+											广东省
+										</li>
+										<li>
+											<span class="tag">所在地区：</span>
+											广东省
+										</li>
+										<li>
+											<span class="tag">所在地区：</span>
+											广东省
+										</li>
+										<li>
+											<span class="tag">所在地区：</span>
+											广东省
+										</li>
+										<li>
+											<span class="tag">所在地区：</span>
+											广东省
+										</li>
+										<li>
+											<img class="li_img" src="../img/shiming.png" />
+										</li>
+										<li>
+											<a class="li_a" href="javascript:;">
+												查看详情
+											</a>
+										</li>
+									</ol>
+								</div>
+								
+								<ol class="li li1">
+									<li class="title">
+										动态评分
+									</li>
+									<li>
+										描述相符：
+										<span class="num">4.66</span>
+									</li>
+									<li>
+										描述相符：
+										<span class="num">4.66</span>
+									</li>
+									<li>
+										描述相符：
+										<span class="num">4.66</span>
+									</li>
+									<li>
+										描述相符：
+										<span class="num">4.66</span>
+									</li>
+								</ol>
+								<ol class="li li2">
+									<li class="title">比同行平均</li>
+									<li>
+										<span class="tag up">高</span>
+										<span class="num">12.9%</span>
+									</li>
+									<li>
+										<span class="tag up">高</span>
+										<span class="num">12.9%</span>
+									</li>
+									<li>
+										<span class="tag up">高</span>
+										<span class="num">12.9%</span>
+									</li>
+									<li>
+										<span class="tag up">高</span>
+										<span class="num">12.9%</span>
+									</li>
+								</ol>
+								<ol class="li li3">
+									<li class="title">
+										本店
+									</li>
+									<li>
+										平均能发货时间：
+										<span class="num">0.83</span>
+										天
+									</li>
+									<li>
+										平均能发货时间：
+										<span class="num">0.83</span>
+										天
+									</li>
+									<li>
+										平均能发货时间：
+										<span class="num">0.83</span>
+										天
+									</li>
+								</ol>
+								<ol class="li li4">
+									<li class="title">行业</li>
+									<li>
+										<span class="num">0.99</span>天
+									</li>
+									<li>
+										<span class="num">0.99</span>天
+									</li>
+									<li>
+										<span class="num">0.99</span>天
+									</li>
+								</ol>
+							</div>
+						</div>
+						<div class="shop-action f1">
+							<a class="shop-fllow" href="javascript:;">收藏</a>
+							<a class="shop-chat" href="javascript:;"></a>
+						</div>
+					</div>
+					<div class="icon_show_sore icon_show"></div>
+				</div> 
+				</div>
+				
+				<div class="line-right fr"></div>
+				<!--search-->
+				<div class="shop-search">
+					<div class="nav_search_form">
+						<form >
+							<input class="sp_txt" type="text" placeholder="输入你想要的商品..." />
+							<input class="sp_search" type="submit" value="搜全站" />
+							<a class="sp_local" href="javascript:;">搜本站</a>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<!--banner-->
+		<div class="banner">
+			<a href="javascript:;">
+				<img src="../img/banner.jpg" />
+			</a>
+		</div>
+		
+		<!--nav-->
+		<div class="nav_top">
+			<ul class="nav_middle">
+				<li><a href="javascript:;">首页</a></li>
+				<li class="all_goods"><a href="javascript:;">全部商品</a>
+					<div class="catagory_list">
+						<dl>
+							<dd><a href="javascript:;">秋季-上衣</a></dd>
+							<dd><a href="javascript:;">秋季-上衣</a></dd>
+							<dd><a href="javascript:;">秋季-上衣</a></dd>
+							<dd><a href="javascript:;">秋季-上衣</a></dd>
+							<dd><a href="javascript:;">秋季-上衣</a></dd>
+							<dd><a href="javascript:;">秋季-上衣</a></dd>
+							<dd><a href="javascript:;">秋季-上衣</a></dd>
+						</dl>
+					</div>
+				</li>
+				<li><a href="javascript:;">省心套装</a></li>
+				<li><a href="javascript:;">夏季-连衣裙</a></li>
+				<li><a href="javascript:;">夏季-半身裙</a></li>
+				<li><a href="javascript:;">夏季-背心吊带</a></li>
+				<li><a href="javascript:;">蕾丝/雪纺上衣</a></li>
+				<li><a href="javascript:;">夏季-衬衫/T恤</a></li>
+				<li><a href="javascript:;">夏季-裤子</a></li>
+				<li><a href="javascript:;">夏季-防晒/外套</a></li>
+			</ul>
+			
+		</div>
+		
+		<!--goods_detail-->
+		<div class="detail_primary clearfix">
+			<div class="detail_pic">
+				<div class="big_pic">
+					<div class="big_pic1">
+						<img src="../img/1.jpg">
+						<div class="pop"></div>
+					</div>
+					<div class="mid_pic"><img src="../img/1.jpg" alt=""></div>
+					<div class="small_pic">
+						<ul>
+							<li class="c"><img src="../img/s1.jpg" /><i class="li_border"></i></li>
+							<li><img src="../img/s2.jpg" /><i></i></li>
+							<li><img src="../img/s3.jpg" /><i></i></li>
+							<li><img src="../img/s4.jpg" /><i></i></li>
+							<li><img src="../img/s5.jpg" /><i></i></li>
+						</ul>
+						
+					</div>
+				</div>
+				
+				<div class="info_box">
+					<h1 class="goods_title">
+						<span>韩剧女主feel休闲西装款中长款风衣薄外套</span>
+					</h1>
+					<div class="goods_main">
+						<dl class="event_box">
+							<dd>
+								<span class="event_tuan_info">
+									<img src="../img/tuan.png" />
+									<span class="desc">团购精选 百里挑一</span>
+								</span>
+								
+								<span class="event_tuan_text">后结束</span>
+								<span class="event_tuan_time">据团购结束还剩</span>
+								
+								<span class="event_time_left">
+									<span class="d">0</span>天
+									<span class="h">0</span>小时
+									<span class="m">0</span>分
+									<span class="s">0</span>秒
+								</span>
+							</dd>
+						</dl>
+						<div class="main_box">
+							<dl class="property_box">
+								<dt class="property_type">
+									价格：
+								</dt>
+								<dd class="property_cont">
+									<span class="price1">￥97.59</span>
+								</dd>
+							</dl>
+							<dl class="property_box">
+								<dt class="property_tuan">
+									团购价：
+								</dt>
+								<dd class="property_cont_tuan">
+									<span class="tuan_price">￥67.30</span>
+								</dd>
+								<dd class="property_extra">
+									<span class="mr10">
+										评价：
+										<span class="num">117</span>
+									</span>
+									<span class="mr10">
+										累计销量：
+										<span class="num">798</span>
+									</span>
+								</dd>
+							</dl>
+							<dl class="shop_privi">
+								<!--<dd class="privi_txt">
+									店铺优惠：
+								</d>-->
+								<dd class="privi_minus1">
+									<p>店铺优惠：</p>
+								</dd>
+								<dd class="privi_minus">
+									<p>购物满90元立减3元</p>
+								</dd>
+
+							</dl>
+						</div>
+						<dl class="connect_ser">
+							<dt class="ser mr20">客服：</dt>
+							<dd class="ser_pic"><a href="javascript:;"></a></dd>
+						</dl>
+						<dl class="size">
+							<dt class="size mr20">款式</dt>
+							<dd class="size_pic">
+								<img class="border_img" src="../img/46X46.jpg" alt="藏青色" /><img src="../img/s3.jpg" alt="米白色" />
+							</dd>
+						</dl>
+						<dl class="size style">
+							<dt class="ser mr20" style="margin-top:20px;">尺码</dt>
+							<dd class="size_pic">
+								<span class="size_txt size_curr">S</span><span class="size_txt">M</span><span class="size_txt">X</span>
+							</dd>
+						</dl>
+						
+						<dl class="stack size">
+							<dt class="mr20 stack_cont">
+								数量
+							</dt>
+							<dd class="stack_num size_pic">
+								<span class="minus"></span>
+								<span class="stack_count">1</span>
+								<span class="add"></span>
+								
+							</dd>
+						</dl>
+						<p class="goods_buy">
+							<a class="buy_now" href="javascript:;">立即购买</a>
+							<a class="add_cart" href="javascript:;">加入购物车</a>
+						</p>
+						<div class="goods_social">
+							<div class="fav item mr10">
+								<b></b>
+								<span class="fav_num">1234</span>
+							</div>
+							<div class="share item mr10">
+								<b></b>
+								<span class="fav_num">分享</span>
+								<div class="share_w">
+									<a href="javascript:;"></a>
+									<a href="javascript:;"></a>
+									<a href="javascript:;"></a>
+									<a href="javascript:;"></a>
+								</div>
+							</div>
+							<a class="goods_report" href="javascript:;">举报</a>
+							
+						</div>
+						
+						<div class="extra_service">
+								<span class="service_txt">服务承诺</span>
+								<a class="link" href="javascript:;">
+									<img src="../img/11.png" />退货补运费
+								</a>
+								<a class="link" href="javascript:;">
+									<img src="../img/12.png" />全国包邮
+								</a>
+								<a class="link" href="javascript:;">
+									<img src="../img/13.png" />72小时发货
+								</a>
+								<a class="link" href="javascript:;">
+									<img src="../img/14.png" />7天无理由退货
+								</a>
+						</div>
+							
+						<div class="extra_pay">
+							<span class="service_txt">支付方式：</span>
+							<div class="f1 list"></div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<!--hot recommend-->
+			<div class="primary_slide">
+				<div class="goods_recommend">
+					<!--热门推荐-->
+					<p class="title">
+						<s></s>
+						<span>热门推荐</span>
+					</p>
+					<ul class="hot_list">
+						<li>
+							<a href="javascript:;">
+								<img src="../img/h1.jpg" />
+								<p>￥15</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="../img/h2.jpg" />
+								<p>￥15</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="../img/h3.jpg" />
+								<p>￥15</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		
+		<!--content-->
+		<div class="detail_content">
+			<!--套餐-->
+			<div class="col_top">
+				<div class="dapei_tab">
+					<ul>
+						<li class="dapei_item active">套餐一</li>
+						<li class="dapei_item">套餐一</li>
+						<li class="dapei_item">套餐一</li>
+					</ul>
+				</div>
+				
+				<div class="col_body">
+					<ul>
+						<li class="col_li">
+							<a href="javascript:;">
+								<img src="../img/t1.jpg" />
+							</a>
+							<div class="check_price">
+								<span class="check">
+									<input type="checkbox" checked="checked" />
+								</span>
+								<span class="col_price">
+									￥56
+								</span>
+							</div>
+							
+							<p class="select_style">
+								选择颜色规格<span class="col_bg"></span>
+							</p>
+						</li>
+						<li class="col_add">
+							<div class="add_pic">+</div>
+						</li>
+						<li class="col_li mr30">
+							<a href="javascript:;">
+								<img src="../img/t1.jpg" />
+							</a>
+							<div class="check_price">
+								<span class="check">
+									<input type="checkbox" checked="checked" />
+								</span>
+								<span class="col_price">
+									￥56
+								</span>
+							</div>
+							
+							<p class="select_style">
+								选择颜色规格<span class="col_bg"></span>
+							</p>
+						</li>
+						<li class="col_li mr30">
+							<a href="javascript:;">
+								<img src="../img/t1.jpg" />
+							</a>
+							<div class="check_price">
+								<span class="check">
+									<input type="checkbox" checked="checked" />
+								</span>
+								<span class="col_price">
+									￥56
+								</span>
+							</div>
+							
+							<div class="select_style">
+								选择颜色规格<span class="col_bg"></span>
+								<!--hide-->
+								<div class="dapei_sku">
+									<p class="goods_select">选择商品信息<span class="close"></span></p>
+						<dl class="size style">
+							<dt class="ser mr20" style="margin-top:20px;">尺码</dt>
+							<dd class="size_pic">
+								<span class="size_txt size_curr">
+									S
+								</span>
+								<span class="size_txt">
+									M
+								</span>
+								<span class="size_txt">
+									X
+								</span>
+							</dd>
+						</dl>
+						
+						<dl class="size">
+							<dt class="size  mr20">款式</dt>
+							<dd class="size_pic select_size">
+								<img class="border_img" src="../img/46X46.jpg" /><img src="../img/s3.jpg" />
+							</dd>
+						</dl>
+						
+						<dl class="sku_num">
+							<dt class="title1">数量：</dt>
+							<dd class="sku_num_body">
+								<div class="sku_counter">
+									<span class="num-reduce f1 num-disable"></span>
+									<span class="num_input">1</span>
+									<span class="num_add f1 num_disable"></span>
+								</div>
+							</dd>
+						</dl>
+									
+							<p><a class="col_ok" href="javascript:;">确定</a></p>		
+								</div>
+							</div>
+						</li>
+						<li class="col_li mr30">
+							<a href="javascript:;">
+								<img src="../img/t1.jpg" />
+							</a>
+							<div class="check_price">
+								<span class="check">
+									<input type="checkbox" checked="checked" />
+								</span>
+								<span class="col_price">
+									￥56
+								</span>
+							</div>
+							
+							<p class="select_style">
+								选择颜色规格<span class="col_bg"></span>
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--shop_list主体-->
+		<div class="col_main">
+			<!--侧边栏-->
+			<div class="col_sidebar">
+				<!--店铺模板-->
+				<div class="module_shop">
+					<!--店铺信息-->
+					<h3 class="hd_txt hd_h3">
+						<a style="color:#363533;" href="javascript:;">冉冉日韩精品</a>
+					</h3>
+					<ul class="ul_box">
+						<li class="li_desc">
+							<span class="ul_desc">描述</span>
+							<span class="ul_score">4.66</span>
+						</li>
+						<li class="li_desc">
+							<span class="ul_desc">描述</span>
+							<span class="ul_score">4.66</span>
+						</li>
+						<li class="li_desc">
+							<span class="ul_desc">描述</span>
+							<span class="ul_score">4.66</span>
+						</li>
+						<li class="li_desc" id="no-border">
+							<span class="ul_desc">描述</span>
+							<span class="ul_score">4.66</span>
+						</li>
+						
+					</ul>
+					<div class="shop_btns">
+						<a class="shop_follow" href="javascript:;">收藏店铺</a>
+						<a class="btn_goto" href="javascript:;">进入店铺</a>
+					</div>
+					<div class="col_search">
+						<form>
+							<input type="text" class="search_txt">
+							<input type="submit" class="search_btn" value="店内搜索">
+						</form>
+					</div>
+					<div class="shop_provice">
+						<a class="shop_img" href="javascript:;">
+							<img src="../img/shop_small.png" />
+						</a>
+					</div>
+				</div>
+				
+				<!--本店分类-->
+				<div class="module_shop mr_20">
+					<h3 class="hd_txt">
+						本店分类
+					</h3>
+					<div class="ui_bd">
+						<!--list-->
+						<ul class="classify_list">
+							<li>
+								<a href="javascript:;">全部商品</a>
+							</li>
+							<li>
+								<a href="javascript:;">全部商品</a>
+							</li>
+							<li>
+								<a href="javascript:;">全部商品</a>
+							</li>
+							<li>
+								<a href="javascript:;">全部商品</a>
+							</li>
+							<li>
+								<a href="javascript:;">全部商品</a>
+							</li>
+							<li>
+								<a href="javascript:;">全部商品</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="module_shop mr_20">
+					<h3 class="hd_txt">
+						看了又看
+					</h3>
+					<div class="ui_bd">
+						<ul class="repeat_list">
+							<li>
+								<a class="pic" href="javascript:;">
+									<img class="lazy loggered" src="../img/p1.jpg" />
+								</a>
+								<a class="title" href="javascript:;">【冉冉】好质量定制韩版显瘦新款打底连衣裙</a>
+								<div class="info">
+									<div class="price_list">
+										<em class="price_u">￥</em>
+										<span class="price_n">91.00</span>
+										
+									</div>
+									<div class="fav">
+										<em class="fac_i"></em>
+										<span class="fav_n">52731</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a class="pic" href="javascript:;">
+									<img class="lazy loggered" src="../img/p1.jpg" />
+								</a>
+								<a class="title" href="javascript:;">【冉冉】好质量定制韩版显瘦新款打底连衣裙</a>
+								<div class="info">
+									<div class="price_list">
+										<em class="price_u">￥</em>
+										<span class="price_n">91.00</span>
+										
+									</div>
+									<div class="fav">
+										<em class="fac_i"></em>
+										<span class="fav_n">52731</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a class="pic" href="javascript:;">
+									<img class="lazy loggered" src="../img/p1.jpg" />
+								</a>
+								<a class="title" href="javascript:;">【冉冉】好质量定制韩版显瘦新款打底连衣裙</a>
+								<div class="info">
+									<div class="price_list">
+										<em class="price_u">￥</em>
+										<span class="price_n">91.00</span>
+										
+									</div>
+									<div class="fav">
+										<em class="fac_i"></em>
+										<span class="fav_n">52731</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a class="pic" href="javascript:;">
+									<img class="lazy loggered" src="../img/p1.jpg" />
+								</a>
+								<a class="title" href="javascript:;">【冉冉】好质量定制韩版显瘦新款打底连衣裙</a>
+								<div class="info">
+									<div class="price_list">
+										<em class="price_u">￥</em>
+										<span class="price_n">91.00</span>
+										
+									</div>
+									<div class="fav">
+										<em class="fac_i"></em>
+										<span class="fav_n">52731</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a class="pic" href="javascript:;">
+									<img class="lazy loggered" src="../img/p1.jpg" />
+								</a>
+								<a class="title" href="javascript:;">【冉冉】好质量定制韩版显瘦新款打底连衣裙</a>
+								<div class="info">
+									<div class="price_list">
+										<em class="price_u">￥</em>
+										<span class="price_n">91.00</span>
+										
+									</div>
+									<div class="fav">
+										<em class="fac_i"></em>
+										<span class="fav_n">52731</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--right_banner-->
+			<div class="col_extra ">
+				<div class="col_cart">
+					<a href="javascript:;"><img src="../img/cart.jpg"/>加入购物车</a>
+				</div>
+				<div class="shop_floor module_shop">
+					<ul class="ui_bd ul_shop">
+						<li class="li_current"><a href="javascript:;">商品描述</a></li>
+						<li ><a href="javascript:;">产品参数</a></li>
+						<li><a href="javascript:;">穿着效果</a></li>
+						<li ><a href="javascript:;">整体款式</a></li>
+						<li ><a href="javascript:;">细节做工</a></li>
+						<li ><a href="javascript:;">尺码说明</a></li>
+						<li><a href="javascript:;">商品推荐</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<!--content-->
+			
+			<div class="module_tabpanel">
+				<div class="tabbar_box">
+					<ul class="tabbar_list clearfix">
+						<li class="tab_graphic selected">
+							<a href="javascript:;">
+								商品详情
+							</a>
+						</li>
+						<li class="tab_graphic">
+							<a href="javascript:;">
+								累计评价
+							</a>
+						</li>
+						<li class="tab_graphic">
+							<a href="javascript:;">
+								本店同类商品
+							</a>
+						</li>
+						<li class="qrcode">
+							<div class="qrcode_togger">
+								手机扫码下单
+							</div>
+							<div class="qrcode_pic">
+								<img src="../img/d2ma.png" />
+							</div>
+							<i class="qrcode_mini"></i>
+							<i class="qrcode_arrow"></i>
+						</li>
+					</ul>
+				</div>
+				
+				<!--本店同类商品-->
+				
+				<!--商品推荐-->
+						<div class="floor same_goods goods_tui" style="padding-left: 19px;padding-right: 19px; display: none;">
+							<div class="panel_title">
+								<h1>本店同类商品</h1>
+							</div>
+							<div class="recommend_list">
+								<!--list-->
+								<ul>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+				
+				
+				
+				<!--累计评价-->
+				<div class="module_panel goods_privi" style="display: none;">
+					<div class="">
+					<div class="panel_title rates_title">
+						<h1>买家评论</h1>
+					</div>
+					<!--买家评论-->
+					<div class="rates_buyer">
+						<!--评价分数-->
+						<div class="comment_info">
+							<ul class="clearfix">
+								<li class="score">
+									<span class="comment_star">
+										<b style="width: 77px;"></b>
+										
+									</span>
+									<span class="numbox">
+										<b class="num_v">4.87</b>
+										<span class="num_s">分</span>
+									</span>
+								</li>
+								<li>
+									<div class="title">价格合理</div>
+									<div class="cont">
+										<span class="comment_star">
+											<b style="width: 77px;"></b>
+										</span>
+										<span class="num_v">4.75</span>
+									</div>
+								</li>
+								<li>
+									<div class="title">商品质量</div>
+									<div class="cont">
+										<span class="comment_star">
+											<b style="width: 77px;"></b>
+										</span>
+										<span class="num_v">4.75</span>
+									</div>
+								</li>
+								<li>
+									<div class="title">描述相符</div>
+									<div class="cont">
+										<span class="comment_star">
+											<b style="width: 77px;"></b>
+										</span>
+										<span class="num_v">4.75</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<!--空格-->
+						<div class="kong"></div>
+						<!--全部评价-->
+						<div class="eval_all" >
+							<div class="all_text">
+								<span class="eval_info">
+									全部评价  (<span class="eval_num">123</span>)
+								</span>
+								<span class="eval_pic">
+									晒图(<span class="pic_num">99</span>)
+								</span>
+								<span class="eval_sort">
+									<input class="input_sort" name="sort" type="radio"   />默认排序
+									<input name="sort" type="radio"   />时间排序
+								</span>
+							</div>
+							<!--买家评论-->
+							<div class="user_eval" >
+								<!--头像-->
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+									</div>	
+								</div>
+								
+								
+								
+								<div class="user_info clearfix">
+									<div class="head_pic"><img src="../img/e1.jpg"/></div>
+									<div class="eval_text">
+										<span class="user_name">1***2</span>
+										<span class="eval_time">
+											<span class="year">2016</span>年<span class="month">05</span>月<span class="day">23</span>日
+										</span>
+										<span class="eval_txt ">
+										对方的实打实，的发生的地方的罚款姐，姐来打开附件快点接发ID地方就拉，屎的的咖啡机快点加福禄寿
+										</span>
+										<div class="para">
+											<span class="eval_color">颜色：<span class="color">卡其色</span></span>
+											<span class="eval_size">尺码：<span class="size_w">均码</span></span>
+										</div>
+										<div class="show_img">
+											<ul class="upload_list">
+												<li class="upload_pic pic_hover">
+													<img src="../img/a1.jpg">
+												</li>
+												<li>
+													<img src="../img/a2.jpg">
+												</li>
+											</ul>
+											
+											<!--hide-->
+											<div class="pic_hide" style="display: none">
+												<img  />
+											</div>
+										</div>
+										
+									</div>
+									
+									
+									
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				
+				
+				<!--产品参数-->
+				<div class="panel_box">
+					<div class="module_panel module_graphic">
+						<div class="floor">
+							<div class="panel_title">
+								<h1>商品描述</h1>
+							</div>
+							<div class="graphic_text">
+								韩国订单/ 早秋款 棉麻面料 软软的 垂感很好 作为外套秋天穿超nice
+								 胸前口袋的小三角缺口肯定是在展露自己的个性小特色 有种小调皮FU
+								  基础的西装翻领超显气质 随时都能穿出韩剧女主角的FEEL 
+								  自带光环？hahah 衣服下摆两边还有两个方口袋 小呆萌的感觉
+								   放小物也是很方便哦
+							</div>
+						</div>
+						<div class="floor">
+							<div class="panel_title">
+								<h1>产品参数</h1>
+							</div>
+							<!--产品参数-->
+							<table class="pramater_table ">
+							<tr>
+								<td>材质：涤纶</td>
+								<td>颜色：灰色，黑色</td>
+								<td>材质：九分袖</td>
+							</tr>
+							<tr>
+								<td>材质：涤纶</td>
+								<td>颜色：灰色，黑色</td>
+								<td>材质：九分袖</td>
+							</tr>
+							<tr>
+								<td>材质：涤纶</td>
+								<td>颜色：灰色，黑色</td>
+								<td>材质：九分袖</td>
+							</tr>
+							<tr>
+								<td>材质：涤纶</td>
+								<td>颜色：灰色，黑色</td>
+								<td>材质：九分袖</td>
+							</tr>
+							<tr>
+								<td>材质：涤纶</td>
+								<td>颜色：灰色，黑色</td>
+								<td>材质：九分袖</td>
+							</tr>
+						</table>
+						</div>
+						<!--模块级别-->
+						<!--图片列表-->
+						<div class="floor">
+							<div class="panel_title">
+								<h1>穿着效果</h1>
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b1.jpg" />
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b2.jpg" />
+							</div>
+						</div>
+						<!--做工细节-->
+						<div class="floor">
+							<div class="panel_title">
+								<h1>整体款式</h1>
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b1.jpg" />
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b2.jpg" />
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b1.jpg" />
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b2.jpg" />
+							</div>
+						</div>
+						
+						<!--整体款式-->
+						<!--做工细节-->
+						<div class="floor">
+							<div class="panel_title">
+								<h1>细节做工</h1>
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b1.jpg" />
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b2.jpg" />
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b1.jpg" />
+							</div>
+							<div class="graphic_pic">
+								<img src="../img/b2.jpg" />
+							</div>
+						</div>
+						<!--尺码说明-->
+						<div class="floor">
+							<div class="panel_title">
+								<h1>尺码说明</h1>
+							</div>
+							<div class="graphic_block">
+								<!--描述-->
+								<!--表格-->
+								<table class="size_table">
+									<thead>
+										<tr>
+											<td>尺码</td>
+											<td>肩宽</td>
+											<td>腰围</td>
+											<td>衣长</td>
+											<td>胸围</td>
+											<td>袖长</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>S</td>
+											<td>35</td>
+											<td>66</td>
+											<td>68</td>
+											<td>88</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>S</td>
+											<td>35</td>
+											<td>66</td>
+											<td>68</td>
+											<td>88</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>S</td>
+											<td>35</td>
+											<td>66</td>
+											<td>68</td>
+											<td>88</td>
+											<td>45</td>
+										</tr>
+										
+									</tbody>
+								</table>
+								<!--提醒-->
+								
+									<div class="size-text">
+										※ 以上尺寸为实物人工测量，因测量当时不同会有1-2cm误差，相关数据仅作参考，以收到实物为准。
+									</div>
+								
+							</div>
+							
+							
+						
+						</div>
+						<!--商品推荐-->
+						<div class="floor same_goods">
+							<div class="panel_title">
+								<h1>本店同类商品</h1>
+							</div>
+							<div class="recommend_list">
+								<!--list-->
+								<ul>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a class="pic" href="javascript:;">
+											<img class="lazy loggered" src="../img/r1.jpg" />
+										</a>
+										<a class="title" href="javascript:;">
+											2016秋季韩版新款条纹文艺+修身显瘦半身裙两件套潮
+										</a>
+										<div class="info">
+											<div class="price_p">
+												<em class="price_u">￥</em>
+												<span class="price_n">78.00</span>
+											</div>
+											<div class="fav">
+												<em class="fac_i"></em>
+												<span class="fav_n">2544</span>
+											</div>
+										</div>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+					
+			</div>
+		</div>
+		
+		<!--footer-->
+		<div class="footer clearfix">
+			<div class="foot">
+				
+				<div class="foot-logo">
+					
+					<div class="foot-intro">
+						<p>营业执照注册号：1234567894565</p>
+						<p>增值电信业务经营许可证：浙123456789</p>
+						<p class="police">浙公网安备 3301062020012号</p>
+						<p>@2010 Mogujie.com 杭州卷瓜网络有限公司</p>
+					</div>
+					<div class="company">
+						<ul>
+							<li class="href-header">公司</li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="company">
+						<ul>
+							<li class="href-header">公司</li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="company">
+						<ul>
+							<li class="href-header">公司</li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="company company1">
+						<ul>
+							<li class="href-header">权威认证</li>
+							<li>
+								<a class="link-a1" href="javascript:;"></a>
+								<a class="link-a2" href="javascript:;"></a>
+							</li>
+						</ul>
+						
+					</div>
+					
+				</div>
+				<div class="bottom">
+					<span>友情链接：</span>
+					<a href="javascript:;">蘑菇街游戏</a>
+					<a href="javascript:;">分逃吧</a>
+					<a href="javascript:;">穿衣搭配</a>
+					<a href="javascript:;">蘑菇街男装</a>
+					<a href="javascript:;">蘑菇街鞋子</a>
+					<a href="javascript:;">蘑菇街包包</a>
+					<a href="javascript:;">QQ钱包</a>
+					<a href="javascript:;">家居网</a>
+					<a href="javascript:;">史上品牌网</a>
+					<a href="javascript:;">装修网</a>
+					<a href="javascript:;">蘑菇街母婴</a>
+					<a href="javascript:;">博士网视频</a>
+					<a href="javascript:;">重回网 </a>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

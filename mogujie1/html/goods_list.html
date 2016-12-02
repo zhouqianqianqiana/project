@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品列表</title>
+		<link rel="stylesheet" href="../css/goods_list.css">
+		<link rel="stylesheet" href="../css/same.css">
+		<link rel="Shortcut Icon" href="../img/logo.ico" type="image/x-ico">
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery.lazyload.min.js"></script>
+		<script src="../js/jquery.cookie.js"></script>
+		<script src="../js/same.js"></script>
+		<script src="../js/cartInfo.js"></script>
+		<script src="../js/good_list.js"></script>
+	</head>
+	<body>
+		<div class="mgj_rightbar" style="right:0">
+			<!--空的右侧边栏-->
+			<div class="mgj_rightbar_960" id="mgj_rightbar_top_blank">
+				
+			</div>
+			<!--方便定margin的空的div-->
+			<div id="mgj_rightbar_blank_div"></div>
+			<!--用户头像-->
+			<div class="sidebar-item mgj-my-avatar">
+				<a target="_blank" href="#">
+					<div class="img">
+						<img width="20" height="20" src="../img/tx.jpg" />
+					</div>
+				</a>
+			</div>
+			<!--购物车-->
+			<div class="sidebar-item mgj-my-cart" style="left:0px;">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">购物车</div>
+					<div class="num" style="display: none;"></div>
+				</a>
+			</div>
+			<!--优惠券-->
+			<div class="sidebar-item mgj-my-coupon">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">优惠券</div>
+					<div class="num" style="display: none;"></div>
+				</a>
+			</div>
+			<!--钱包-->
+			<div class="sidebar-item mgj-my-wallet">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">钱包</div>
+				</a>
+			</div>
+			<!--足迹-->
+			<div class="sidebar-item mgj-my-browserlog">
+				<a href="#">
+					<i class="s-icon"></i>
+					<div class="s-txt">足迹</div>
+					
+				</a>
+			</div>
+			<div class="sideBottom">
+				<!--回到顶部-->
+				<div class="sidebar-item mgj-back2top" style="left:0px;">
+					<a href="#">
+						<i class="s-icon"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--头部-->
+		
+		
+			<!--header-->
+		<div id="header" class="J_sitenav header_2015">
+			<div class="wrap clearfix">
+				<a href="../index.html"  target="_blank" class="home fl">蘑菇街首页</a>
+				<ul class="header_top">
+					<!--未登录-->
+					<li class="s1 show-nologin"><a id="no-border" href="register.html">注册</a></li>
+					<li class="s1 show-nologin"><a id="no-border" href="login.html">登录</a></li>
+					<li class="s1 has_icon user_meta" style="display: none;">
+						<a href="#">周倩倩倩啊</a>
+						<a href="#"></a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode" id="menu_personal">
+							<li class="s2">
+								<a href="#">个人设置</a>
+							</li>
+							<li class="s2">
+								<a href="#">账号绑定</a>
+							</li>
+							<li class="s2">
+								<a href="#">退出</a>
+							</li>
+						</ol>
+					</li>
+					<li class="s1 has_line message_center">
+						<a href="#" class="ext_module mogutalk_btn J_msg open_msg micon">
+							消息
+							<span class="num m_num" style="display: none;"></span>
+						</a>
+					</li>
+					<li class="s2 has_icon has_line user_fav">
+						<a href="#">我的收藏</a>
+						<i class="icon_delta"></i>
+						<ul class="ext_mode">
+							<li class="s2">
+								<a href="#">收藏的商品</a>
+							</li>
+							<li class="s2">
+								<a href="#">收藏的小店</a>
+							</li>
+							<li class="s2">
+								<a href="#">浏览足迹</a>
+							</li>
+						</ul>
+					</li>
+					<li class="s1 myorder has_line">
+						<a href="#" class="text display_u">我的订单</a>
+					</li>
+					<li class="s1 has_line shopping_cart_v2">
+						<a href="#" class="cart_info_wrap">
+							<span class="cart_info">购物车</span>
+						</a>
+						<i class="icon_delta"></i>
+						<span class="shop_cart_loading"></span>
+						<div class="empty_cart shop_cart_info" style="display:none"><p>您的购物车为空</p></div>
+						<div class="shop_cart_info" style="display: none;">
+							<ul class="mac_height_ie6">
+								<li class="cart_li" style="display:none;">
+									<a href="#" class="imgbox">
+										<img src="" width="45"/>
+									</a>
+									<a href="#" class="title">title</a>
+									<span class="info">颜色：<span class="info_color">color</span> 尺码：<span class="info_size">sizeCurr</span></span><span class="price">priceNext</span><span class='del'>删除</span>
+								</li>
+							</ul>
+							<div class="subbox">
+								<div class="fr">
+									<a href="#" class="goel">查看购物车</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="s1 has_line has_icon custom_item">
+						<a href="#">客户服务</a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode">
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+							<li class="s2">
+								<a href="#">消费者服务</a>
+							</li>
+						</ol>
+					</li>
+					<li class="s1 has_line has_icon myxiaodian">
+						<a href="#" class="text display_u">我的小店</a>
+						<i class="icon_delta"></i>
+						<ol class="ext_mode">
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+							<li class="s2">
+								<a href="#">管理后台</a>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+				<!--header-mid-->
+		<div class="header-mid">
+			<div class="header-wrap">
+				<div class="logo">
+					<a href="javascript:;">
+						<img src="../img/upload_ie4denjsgzrdqyleg4zdambqgiyde_207x51.png">
+					</a>
+				</div>
+				
+				<div class="form">
+					<div class="search-select">
+						<span class="selected">搜商品</span>
+						<ol>
+							<li class="current">
+								<a href="javascript:;">商品</a>
+							</li>
+							<li class="current">
+								<a href="javascript:;">店铺</a>
+							</li>
+						</ol>
+					</div>
+					<div class="form_search">
+						<input class="txt" id="search_txt" type="text" placeholder="初秋元气套装"/>
+						<input class="search" type="submit" value=" "/>
+						
+					</div>
+					<ul class="form_text" id="search_list">
+
+					</ul>
+					
+					<div class="sear-show">
+					</div>
+				</div>
+				<!--<div class="erweima">
+					<img src="../img/upload_ifrdsnjugizgkn3ghezdambqmeyde_280x280.png" />
+				</div>-->
+				<div class="mid_mogu_qrcode">
+					<img src="../img/list_code.png" />
+					<span class="code_txt">蘑菇街客户端</span>
+				</div>
+			</div>
+		</div>
+		
+		<!--中间区域-->
+		<div class="body_wrap">
+			<div class="wrap">
+				<div class="search_condition_box">
+					<div class="sp_topbanner clearfix">
+						<div class="sp_top_nav">
+							<ul class="nav_list">
+							</ul>
+						</div>
+						
+						<div class="sp_type_nav">
+							<a class="right_img" href="goods_detail.html">
+								<img src="" />
+							</a>
+							<div class="type_sections">
+								<div class="type_section first" style="display:none;">
+									<dt>
+										<a href="javascript:;">当季热卖</a>
+									</dt>
+									<dd>
+										<a class="cat_img" href="#" >
+											<img src="../img/list_pic1.jpg" />
+										</a>
+										<ul>
+											<li style="display:none;">
+												<a class="hot" href="javascrip:;">T恤</a>
+											</li>
+										</ul>
+									</dd>
+								</div>
+								
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<h3 class="sub_title" id="category_all">上衣</h3>
+				<div class="wall_goods_box" id="wall_goods_box">
+					<!--ajax参数param-name里填参数名 value填参数值-->
+					<div class="param_container">
+						<input type="hidden" class="ajax_param" param-name="_version" value="1">
+					</div>
+					<div class="nav_container">
+						<form class="price_custom" method="get">
+							<div class="sp_filter clearfix sort_nav">
+								<div class="nav_left fl clearfix">
+									<div class="sort_container fl">
+										<a class="sort fl on" href="javascript:;">综合</a>
+										<a href="javascript:;" class="sort fl">销量</a>
+										<a href="javascript:;" class="sort fl">最新</a>
+									
+									</div>
+									<div class="price fl">
+										<div class="txt1">
+											<span class="rmb">￥</span>
+											<input type="text" class="from" value name="minPrice">
+										</div>
+										<span class="divid">-</span>
+										<div class="txt1">
+											<span class="rmb">￥</span>
+											<input type="text" class="from" value name="minPrice">
+										</div>
+										<a href="javascript:;" class="sbt definedprice">确定</a>
+
+									</div>
+									<ul class="price_choice fl">
+										<li class="price_citem">
+											<a href="javascript:;">
+												49-66
+											</a>
+										</li>
+										<li class="price_citem">
+											<a href="javascript:;">
+												49-66
+											</a>
+										</li>
+										<li class="price_citem">
+											<a href="javascript:;">
+												49-66
+											</a>
+										</li>
+									</ul>
+									
+								</div>
+								<div class="nav_right fl clearfix">
+									
+								</div>
+								
+							</div>
+						</form>
+					</div>
+					<!--插入图强html容器-->
+					<div class="common_goods_wall J_scorll_wallbox clearfix" id="common_goods_wall">
+						<div class="iwf" style="display:none;">
+							<a class="img J_dynamic_imagebox loading_bg_120" href="goods_detail.html" target="_blank">
+								<img class="J_dynamic_img fill_img" data-original="" />
+							</a>
+							<a href="#" class="goods_info_container">
+								<p class="title fl" style="height: 22px;white-space: nowrap;text-overflow: ellipsis;">韩版双色拼色立领长袖棒球服女学生宽松短款外套</p>
+								<p class="icon_event_leftBottom">
+									<img src="../img/icon_event_leftBottom.png" />
+								</p>
+								<div class="goods_info fl">
+									<b class="price_info yahei">￥129</b>
+									<span class="fav_num fr">
+										<span></span>
+										<img src="../img/fav.png" />
+									</span>
+								</div>
+							</a>
+						</div>
+						
+					</div>
+					<div class="page_container">
+						<div class="pagination pd_tb">
+							<a href="#" class="c">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">...</a>
+							<a href="#">100</a>
+							<a href="#">下一页></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+		
+		
+			<!--footer-->
+		<div class="footer">
+			<div class="foot">
+				
+				<div class="foot-logo">
+					
+					<div class="foot-intro">
+						<p>营业执照注册号：1234567894565</p>
+						<p>增值电信业务经营许可证：浙123456789</p>
+						<p class="police">浙公网安备 3301062020012号</p>
+						<p>@2010 Mogujie.com 杭州卷瓜网络有限公司</p>
+					</div>
+					<div class="company">
+						<ul>
+							<li class="href-header">公司</li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="company">
+						<ul>
+							<li class="href-header">公司</li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="company">
+						<ul>
+							<li class="href-header">公司</li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="company company1">
+						<ul>
+							<li class="href-header">权威认证</li>
+							<li>
+								<a class="link-a1" href="javascript:;"></a>
+								<a class="link-a2" href="javascript:;"></a>
+							</li>
+						</ul>
+						
+					</div>
+					
+				</div>
+				<div class="bottom">
+					<span>友情链接：</span>
+					<a href="javascript:;">蘑菇街游戏</a>
+					<a href="javascript:;">分逃吧</a>
+					<a href="javascript:;">穿衣搭配</a>
+					<a href="javascript:;">蘑菇街男装</a>
+					<a href="javascript:;">蘑菇街鞋子</a>
+					<a href="javascript:;">蘑菇街包包</a>
+					<a href="javascript:;">QQ钱包</a>
+					<a href="javascript:;">家居网</a>
+					<a href="javascript:;">史上品牌网</a>
+					<a href="javascript:;">装修网</a>
+					<a href="javascript:;">蘑菇街母婴</a>
+					<a href="javascript:;">博士网视频</a>
+					<a href="javascript:;">重回网 </a>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class=" search_box">
+			<div class="container_wrap">
+				<a class="search_logo" href="javascript:;">
+					蘑菇街我的买手街
+				</a>
+				<div class="search_content">
+					<div class="selectbox">
+						<span class="selected">搜商品</span>
+						<ol style="display: none;">
+							<li class="current">
+								<a href="javascript:;">商品</a>
+							</li>
+							<li class="current">
+								<a href="javascript:;">店铺</a>
+							</li>
+						</ol>
+					</div>
+					<form>
+						<input class="st_txt" type="text" value="小清新套装"/>
+						<input class="st_btn" type="submit" value=""/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
